@@ -1,8 +1,4 @@
-# Simple Web-based Warehouse Management Application (work in progress)
-
-Prototype for simple Warehouse Management System
-
-## Overview
+## Simple Web-based Warehouse Management Application (work in progress)
 
 Web based application for simple warehouse inventory managment (currently with very limited functionalities). It is designed to help manage item locations and inventory in small business and househoulds that dont need complicated ERP like applications.
 
