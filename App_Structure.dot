@@ -1,0 +1,20 @@
+digraph STRUCTURE {
+  node [shape = record;];
+
+  FRONTEND [label="{ FRONTEND (React.js) | 
+  - Vite development environment with PWA features implemented using vite-plugin-pwa \l
+  - User interface with the Material UI \l 
+  - Barcode scanning with the camera (Barcode Detection API + polyfill(barcode-detector) \l 
+  - Axios library for backend communication \l}"];
+
+  BACKEND [label="{ BACKEND (Node.js + Express) | 
+  - JSON Web Token for user authentication \l 
+  - Sequelize (ORM library) for database queries and model definitions \l}"];
+
+  DATABASE [label="{ DATABASE (PostgreSQL) | 
+  - Relational database \l
+  - Stores users, sessions, warehouses, locations, balances, and products \l}"];
+
+  FRONTEND -> BACKEND [dir=none];
+  BACKEND -> DATABASE [dir=none];
+}

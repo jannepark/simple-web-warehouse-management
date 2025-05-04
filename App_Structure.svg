@@ -1,0 +1,47 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="500pt" height="333pt" viewBox="0.00 0.00 499.54 332.60">
+<g id="graph0" class="graph" transform="translate(4,328.6000061035156) scale(1)" data-name="STRUCTURE">
+
+<polygon fill="white" stroke="none" points="-4,4 -4,-328.6 495.54,-328.6 495.54,4 -4,4"/>
+<!-- FRONTEND -->
+<g id="node1" class="node" pointer-events="visible" data-name="FRONTEND">
+
+<polygon fill="none" stroke="black" points="0,-224.1 0,-324.1 491.54,-324.1 491.54,-224.1 0,-224.1"/>
+<text text-anchor="middle" x="245.77" y="-307.5" font-family="Times,serif" font-size="14.00">FRONTEND (React.js)</text>
+<polyline fill="none" stroke="black" points="0,-299.3 491.54,-299.3"/>
+<text text-anchor="start" x="8" y="-282.7" font-family="Times,serif" font-size="14.00">- Vite-kehitysympäristö ja PWA-ominaisuuksien toteutus vite-plugin-pwa lisäosalla </text>
+<text text-anchor="start" x="8" y="-265.9" font-family="Times,serif" font-size="14.00"> - Käyttöliittymässä hyödynnetty Material UI-komponenttikirjastoa </text>
+<text text-anchor="start" x="8" y="-249.1" font-family="Times,serif" font-size="14.00"> - Viivakoodien luku kameralla (Barcode Detection API + polyfill) </text>
+<text text-anchor="start" x="8" y="-232.3" font-family="Times,serif" font-size="14.00"> - Axios-kirjasto backend-yhteyksiä varten </text>
+</g>
+<!-- BACKEND -->
+<g id="node2" class="node" pointer-events="visible" data-name="BACKEND">
+
+<polygon fill="none" stroke="black" points="31.32,-103.9 31.32,-187.1 460.22,-187.1 460.22,-103.9 31.32,-103.9"/>
+<text text-anchor="middle" x="245.77" y="-170.5" font-family="Times,serif" font-size="14.00">BACKEND (Node.js + Express)</text>
+<polyline fill="none" stroke="black" points="31.32,-162.3 460.22,-162.3"/>
+<text text-anchor="start" x="39.32" y="-145.7" font-family="Times,serif" font-size="14.00">- REST-rajapinnat </text>
+<text text-anchor="start" x="39.32" y="-128.9" font-family="Times,serif" font-size="14.00"> - JSON Web Token käyttäjän tunnistukseen </text>
+<text text-anchor="start" x="39.32" y="-112.1" font-family="Times,serif" font-size="14.00"> - Sequelize (ORM-kirjasto) tietokantakyselyihin ja mallien määrittelyyn </text>
+</g>
+<!-- FRONTEND&#45;&gt;BACKEND -->
+<g id="edge1" class="edge" data-name="FRONTEND-&gt;BACKEND">
+
+<path fill="none" stroke="black" d="M245.77,-224.15C245.77,-211.77 245.77,-198.61 245.77,-186.71"/>
+</g>
+<!-- DATABASE -->
+<g id="node3" class="node" pointer-events="visible" data-name="DATABASE">
+
+<polygon fill="none" stroke="black" points="49.58,-0.5 49.58,-66.9 441.96,-66.9 441.96,-0.5 49.58,-0.5"/>
+<text text-anchor="middle" x="245.77" y="-50.3" font-family="Times,serif" font-size="14.00">DATABASE (PostgreSQL)</text>
+<polyline fill="none" stroke="black" points="49.58,-42.1 441.96,-42.1"/>
+<text text-anchor="start" x="57.58" y="-25.5" font-family="Times,serif" font-size="14.00">- Relaatiotietokanta </text>
+<text text-anchor="start" x="57.58" y="-8.7" font-family="Times,serif" font-size="14.00"> - Tallentaa käyttäjät, istunnot, varastot, sijainnit, saldot ja tuotteet </text>
+</g>
+<!-- BACKEND&#45;&gt;DATABASE -->
+<g id="edge2" class="edge" data-name="BACKEND-&gt;DATABASE">
+
+<path fill="none" stroke="black" d="M245.77,-103.93C245.77,-91.71 245.77,-78.47 245.77,-66.88"/>
+</g>
+</g>
+</svg>

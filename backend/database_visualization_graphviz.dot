@@ -1,0 +1,26 @@
+digraph G {
+  node [shape = record;];
+  
+  USERS [label = "{ USERS | id (PK): INTEGER \l username: STRING (UNIQUE, NOT NULL, EMAIL) \l name: STRING (NOT NULL) \l disabled: BOOLEAN (DEFAULT FALSE) \l password_hash: STRING (NOT NULL) \l created_at: DATE (DEFAULT NOW()) \l updated_at: DATE (DEFAULT NOW()) \l }";];
+  
+  WAREHOUSES [label = "{ WAREHOUSES | id (PK): INTEGER \l name: TEXT \l description: TEXT \l created_at: DATE (DEFAULT NOW()) \l updated_at: DATE (DEFAULT NOW()) \l }";];
+  
+  LOCATIONS [label = "{ LOCATIONS | id (PK): INTEGER \l name: STRING (NOT NULL) \l warehouse_id (FK): INTEGER (NOT NULL) \l description: TEXT \l created_at: DATE (DEFAULT NOW()) \l updated_at: DATE (DEFAULT NOW()) \l }";];
+  
+  ITEMS [label = "{ ITEMS | id (PK): INTEGER \l name: STRING (NOT NULL) \l description: TEXT \l category: STRING \l unit: STRING \l barcode: STRING (UNIQUE) \l created_at: DATE (DEFAULT NOW()) \l updated_at: DATE (DEFAULT NOW()) \l }";];
+  
+  INVENTORIES [label = "{ INVENTORIES | id (PK): INTEGER \l item_id (FK): INTEGER (NOT NULL) \l location_id (FK): INTEGER (NOT NULL) \l quantity: FLOAT (NOT NULL) \l last_updated: DATE (DEFAULT NOW()) \l UNIQUE (item_id, location_id) \l }";];
+  
+  SESSIONS [label = "{ SESSIONS | token (PK): STRING \l user_id (FK): INTEGER (NOT NULL) \l created_at: DATE (DEFAULT NOW()) \l }";];
+  
+  // Relationships
+  USERS -> SESSIONS [label = "has many";];
+  WAREHOUSES -> LOCATIONS [label = "has many";];
+  LOCATIONS -> INVENTORIES [label = "has many";];
+  INVENTORIES -> ITEMS [label = "belongs to";];
+  INVENTORIES -> LOCATIONS [label = "belongs to";];
+  
+  ITEMS -> INVENTORIES [label = "has many";];
+  LOCATIONS -> ITEMS [label = "many-to-many via INVENTORIES";];
+  ITEMS -> LOCATIONS [label = "many-to-many via INVENTORIES";];
+}

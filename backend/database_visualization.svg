@@ -1,0 +1,52 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1004pt" height="84pt" viewBox="0.00 0.00 1003.87 84.2">
+<g id="graph0" class="graph" transform="translate(69.39780914697405,-11.66160097887608) scale(0.8467453090041486)" data-name="STRUCTURE">
+
+<polygon fill="white" stroke="none" points="-4,4 -4,-80.2 999.87,-80.2 999.87,4 -4,4"/>
+<!-- FRONTEND -->
+<g id="node1" class="node" pointer-events="visible" data-name="FRONTEND">
+
+<polygon fill="none" stroke="black" points="0,-0.5 0,-75.7 338.93,-75.7 338.93,-0.5 0,-0.5"/>
+<text text-anchor="middle" x="52.93" y="-42.3" font-family="Helvetica,sans-Serif" font-size="14.00">FRONTEND </text>
+<polyline fill="none" stroke="black" points="105.87,-0.5 105.87,-75.7"/>
+<text text-anchor="middle" x="52.93" y="-25.5" font-family="Helvetica,sans-Serif" font-size="14.00"> (React + Vite)</text>
+<text text-anchor="start" x="113.87" y="-59.1" font-family="Helvetica,sans-Serif" font-size="14.00">PWA application (React.js) </text>
+<text text-anchor="start" x="113.87" y="-42.3" font-family="Helvetica,sans-Serif" font-size="14.00"> UI (MUI components) </text>
+<text text-anchor="start" x="113.87" y="-25.5" font-family="Helvetica,sans-Serif" font-size="14.00"> Barcode scanning (API + polyfill) </text>
+<text text-anchor="start" x="113.87" y="-8.7" font-family="Helvetica,sans-Serif" font-size="14.00"> Axios communication (REST API) </text>
+</g>
+<!-- BACKEND -->
+<g id="node2" class="node" pointer-events="visible" data-name="BACKEND">
+
+<polygon fill="none" stroke="black" points="374.93,-0.5 374.93,-75.7 707.67,-75.7 707.67,-0.5 374.93,-0.5"/>
+<text text-anchor="middle" x="446.53" y="-42.3" font-family="Helvetica,sans-Serif" font-size="14.00">BACKEND </text>
+<polyline fill="none" stroke="black" points="518.14,-0.5 518.14,-75.7"/>
+<text text-anchor="middle" x="446.53" y="-25.5" font-family="Helvetica,sans-Serif" font-size="14.00"> (Node.js + Express)</text>
+<text text-anchor="start" x="526.14" y="-59.1" font-family="Helvetica,sans-Serif" font-size="14.00">REST APIs </text>
+<text text-anchor="start" x="526.14" y="-42.3" font-family="Helvetica,sans-Serif" font-size="14.00"> JWT authentication </text>
+<text text-anchor="start" x="526.14" y="-25.5" font-family="Helvetica,sans-Serif" font-size="14.00"> Business logic &amp; validation </text>
+<text text-anchor="start" x="526.14" y="-8.7" font-family="Helvetica,sans-Serif" font-size="14.00"> Sequelize ORM </text>
+</g>
+<!-- FRONTEND&#45;&gt;BACKEND -->
+<g id="edge1" class="edge" data-name="FRONTEND-&gt;BACKEND">
+
+<path fill="none" stroke="black" d="M338.88,-38.1C350.89,-38.1 363,-38.1 374.99,-38.1"/>
+</g>
+<!-- DATABASE -->
+<g id="node3" class="node" pointer-events="visible" data-name="DATABASE">
+
+<polygon fill="none" stroke="black" points="743.67,-8.9 743.67,-67.3 995.87,-67.3 995.87,-8.9 743.67,-8.9"/>
+<text text-anchor="middle" x="796.41" y="-42.3" font-family="Helvetica,sans-Serif" font-size="14.00">DATABASE </text>
+<polyline fill="none" stroke="black" points="849.15,-8.9 849.15,-67.3"/>
+<text text-anchor="middle" x="796.41" y="-25.5" font-family="Helvetica,sans-Serif" font-size="14.00"> (PostgreSQL)</text>
+<text text-anchor="start" x="857.15" y="-50.7" font-family="Helvetica,sans-Serif" font-size="14.00">Relational model </text>
+<text text-anchor="start" x="857.15" y="-33.9" font-family="Helvetica,sans-Serif" font-size="14.00"> Foreign keys </text>
+<text text-anchor="start" x="857.15" y="-17.1" font-family="Helvetica,sans-Serif" font-size="14.00"> Extensible structure </text>
+</g>
+<!-- BACKEND&#45;&gt;DATABASE -->
+<g id="edge2" class="edge" data-name="BACKEND-&gt;DATABASE">
+
+<path fill="none" stroke="black" d="M707.45,-38.1C719.79,-38.1 732.11,-38.1 744.13,-38.1"/>
+</g>
+</g>
+</svg>
