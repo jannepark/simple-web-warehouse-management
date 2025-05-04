@@ -1,52 +1,140 @@
 <?xml version="1.0" standalone="no"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1004pt" height="84pt" viewBox="0.00 0.00 1003.87 84.2">
-<g id="graph0" class="graph" transform="translate(69.39780914697405,-11.66160097887608) scale(0.8467453090041486)" data-name="STRUCTURE">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="731pt" height="755pt" viewBox="0.00 0.00 731.44 755.20">
+<g id="graph0" class="graph" transform="translate(4,751.2000122070312) scale(1)" data-name="G">
 
-<polygon fill="white" stroke="none" points="-4,4 -4,-80.2 999.87,-80.2 999.87,4 -4,4"/>
-<!-- FRONTEND -->
-<g id="node1" class="node" pointer-events="visible" data-name="FRONTEND">
+<polygon fill="white" stroke="none" points="-4,4 -4,-751.2 727.44,-751.2 727.44,4 -4,4" style=""/>
+<!-- USERS -->
+<g id="node1" class="node" pointer-events="visible" data-name="USERS">
 
-<polygon fill="none" stroke="black" points="0,-0.5 0,-75.7 338.93,-75.7 338.93,-0.5 0,-0.5"/>
-<text text-anchor="middle" x="52.93" y="-42.3" font-family="Helvetica,sans-Serif" font-size="14.00">FRONTEND </text>
-<polyline fill="none" stroke="black" points="105.87,-0.5 105.87,-75.7"/>
-<text text-anchor="middle" x="52.93" y="-25.5" font-family="Helvetica,sans-Serif" font-size="14.00"> (React + Vite)</text>
-<text text-anchor="start" x="113.87" y="-59.1" font-family="Helvetica,sans-Serif" font-size="14.00">PWA application (React.js) </text>
-<text text-anchor="start" x="113.87" y="-42.3" font-family="Helvetica,sans-Serif" font-size="14.00"> UI (MUI components) </text>
-<text text-anchor="start" x="113.87" y="-25.5" font-family="Helvetica,sans-Serif" font-size="14.00"> Barcode scanning (API + polyfill) </text>
-<text text-anchor="start" x="113.87" y="-8.7" font-family="Helvetica,sans-Serif" font-size="14.00"> Axios communication (REST API) </text>
+<polygon fill="none" stroke="black" points="0,-596.3 0,-746.7 328.99,-746.7 328.99,-596.3 0,-596.3" style=""/>
+<text text-anchor="middle" x="164.5" y="-730.1" font-family="Times,serif" font-size="14.00" style="">USERS</text>
+<polyline fill="none" stroke="black" points="0,-721.9 328.99,-721.9" style=""/>
+<text text-anchor="start" x="8" y="-705.3" font-family="Times,serif" font-size="14.00" style="">id (PK): INTEGER </text>
+<text text-anchor="start" x="8" y="-688.5" font-family="Times,serif" font-size="14.00" style=""> username: STRING (UNIQUE, NOT NULL, EMAIL) </text>
+<text text-anchor="start" x="8" y="-671.7" font-family="Times,serif" font-size="14.00" style=""> name: STRING (NOT NULL) </text>
+<text text-anchor="start" x="8" y="-654.9" font-family="Times,serif" font-size="14.00" style=""> disabled: BOOLEAN (DEFAULT FALSE) </text>
+<text text-anchor="start" x="8" y="-638.1" font-family="Times,serif" font-size="14.00" style=""> password_hash: STRING (NOT NULL) </text>
+<text text-anchor="start" x="8" y="-621.3" font-family="Times,serif" font-size="14.00" style=""> created_at: DATE (DEFAULT NOW()) </text>
+<text text-anchor="start" x="8" y="-604.5" font-family="Times,serif" font-size="14.00" style=""> updated_at: DATE (DEFAULT NOW()) </text>
 </g>
-<!-- BACKEND -->
-<g id="node2" class="node" pointer-events="visible" data-name="BACKEND">
+<!-- SESSIONS -->
+<g id="node6" class="node" pointer-events="visible" data-name="SESSIONS">
 
-<polygon fill="none" stroke="black" points="374.93,-0.5 374.93,-75.7 707.67,-75.7 707.67,-0.5 374.93,-0.5"/>
-<text text-anchor="middle" x="446.53" y="-42.3" font-family="Helvetica,sans-Serif" font-size="14.00">BACKEND </text>
-<polyline fill="none" stroke="black" points="518.14,-0.5 518.14,-75.7"/>
-<text text-anchor="middle" x="446.53" y="-25.5" font-family="Helvetica,sans-Serif" font-size="14.00"> (Node.js + Express)</text>
-<text text-anchor="start" x="526.14" y="-59.1" font-family="Helvetica,sans-Serif" font-size="14.00">REST APIs </text>
-<text text-anchor="start" x="526.14" y="-42.3" font-family="Helvetica,sans-Serif" font-size="14.00"> JWT authentication </text>
-<text text-anchor="start" x="526.14" y="-25.5" font-family="Helvetica,sans-Serif" font-size="14.00"> Business logic &amp; validation </text>
-<text text-anchor="start" x="526.14" y="-8.7" font-family="Helvetica,sans-Serif" font-size="14.00"> Sequelize ORM </text>
+<polygon fill="none" stroke="black" points="40.46,-434.1 40.46,-517.3 288.54,-517.3 288.54,-434.1 40.46,-434.1" style=""/>
+<text text-anchor="middle" x="164.5" y="-500.7" font-family="Times,serif" font-size="14.00" style="">SESSIONS</text>
+<polyline fill="none" stroke="black" points="40.46,-492.5 288.54,-492.5" style=""/>
+<text text-anchor="start" x="48.46" y="-475.9" font-family="Times,serif" font-size="14.00" style="">token (PK): STRING </text>
+<text text-anchor="start" x="48.46" y="-459.1" font-family="Times,serif" font-size="14.00" style=""> user_id (FK): INTEGER (NOT NULL) </text>
+<text text-anchor="start" x="48.46" y="-442.3" font-family="Times,serif" font-size="14.00" style=""> created_at: DATE (DEFAULT NOW()) </text>
 </g>
-<!-- FRONTEND&#45;&gt;BACKEND -->
-<g id="edge1" class="edge" data-name="FRONTEND-&gt;BACKEND">
+<!-- USERS&#45;&gt;SESSIONS -->
+<g id="edge1" class="edge" data-name="USERS-&gt;SESSIONS">
 
-<path fill="none" stroke="black" d="M338.88,-38.1C350.89,-38.1 363,-38.1 374.99,-38.1"/>
+<path fill="none" stroke="black" d="M164.5,-596.4C164.5,-573.79 164.5,-549.42 164.5,-528.6" style=""/>
+<polygon fill="black" stroke="black" points="168,-528.64 164.5,-518.64 161,-528.64 168,-528.64" style=""/>
+<text text-anchor="middle" x="191.13" y="-565.2" font-family="Times,serif" font-size="14.00" style="">has many</text>
 </g>
-<!-- DATABASE -->
-<g id="node3" class="node" pointer-events="visible" data-name="DATABASE">
+<!-- WAREHOUSES -->
+<g id="node2" class="node" pointer-events="visible" data-name="WAREHOUSES">
 
-<polygon fill="none" stroke="black" points="743.67,-8.9 743.67,-67.3 995.87,-67.3 995.87,-8.9 743.67,-8.9"/>
-<text text-anchor="middle" x="796.41" y="-42.3" font-family="Helvetica,sans-Serif" font-size="14.00">DATABASE </text>
-<polyline fill="none" stroke="black" points="849.15,-8.9 849.15,-67.3"/>
-<text text-anchor="middle" x="796.41" y="-25.5" font-family="Helvetica,sans-Serif" font-size="14.00"> (PostgreSQL)</text>
-<text text-anchor="start" x="857.15" y="-50.7" font-family="Helvetica,sans-Serif" font-size="14.00">Relational model </text>
-<text text-anchor="start" x="857.15" y="-33.9" font-family="Helvetica,sans-Serif" font-size="14.00"> Foreign keys </text>
-<text text-anchor="start" x="857.15" y="-17.1" font-family="Helvetica,sans-Serif" font-size="14.00"> Extensible structure </text>
+<polygon fill="none" stroke="black" points="346.5,-613.1 346.5,-729.9 598.49,-729.9 598.49,-613.1 346.5,-613.1" style=""/>
+<text text-anchor="middle" x="472.5" y="-713.3" font-family="Times,serif" font-size="14.00" style="">WAREHOUSES</text>
+<polyline fill="none" stroke="black" points="346.5,-705.1 598.49,-705.1" style=""/>
+<text text-anchor="start" x="354.5" y="-688.5" font-family="Times,serif" font-size="14.00" style="">id (PK): INTEGER </text>
+<text text-anchor="start" x="354.5" y="-671.7" font-family="Times,serif" font-size="14.00" style=""> name: TEXT </text>
+<text text-anchor="start" x="354.5" y="-654.9" font-family="Times,serif" font-size="14.00" style=""> description: TEXT </text>
+<text text-anchor="start" x="354.5" y="-638.1" font-family="Times,serif" font-size="14.00" style=""> created_at: DATE (DEFAULT NOW()) </text>
+<text text-anchor="start" x="354.5" y="-621.3" font-family="Times,serif" font-size="14.00" style=""> updated_at: DATE (DEFAULT NOW()) </text>
 </g>
-<!-- BACKEND&#45;&gt;DATABASE -->
-<g id="edge2" class="edge" data-name="BACKEND-&gt;DATABASE">
+<!-- LOCATIONS -->
+<g id="node3" class="node" pointer-events="visible" data-name="LOCATIONS">
 
-<path fill="none" stroke="black" d="M707.45,-38.1C719.79,-38.1 732.11,-38.1 744.13,-38.1"/>
+<polygon fill="none" stroke="black" points="331.92,-408.9 331.92,-542.5 613.07,-542.5 613.07,-408.9 331.92,-408.9" style=""/>
+<text text-anchor="middle" x="472.5" y="-525.9" font-family="Times,serif" font-size="14.00" style="">LOCATIONS</text>
+<polyline fill="none" stroke="black" points="331.92,-517.7 613.07,-517.7" style=""/>
+<text text-anchor="start" x="339.92" y="-501.1" font-family="Times,serif" font-size="14.00" style="">id (PK): INTEGER </text>
+<text text-anchor="start" x="339.92" y="-484.3" font-family="Times,serif" font-size="14.00" style=""> name: STRING (NOT NULL) </text>
+<text text-anchor="start" x="339.92" y="-467.5" font-family="Times,serif" font-size="14.00" style=""> warehouse_id (FK): INTEGER (NOT NULL) </text>
+<text text-anchor="start" x="339.92" y="-450.7" font-family="Times,serif" font-size="14.00" style=""> description: TEXT </text>
+<text text-anchor="start" x="339.92" y="-433.9" font-family="Times,serif" font-size="14.00" style=""> created_at: DATE (DEFAULT NOW()) </text>
+<text text-anchor="start" x="339.92" y="-417.1" font-family="Times,serif" font-size="14.00" style=""> updated_at: DATE (DEFAULT NOW()) </text>
+</g>
+<!-- WAREHOUSES&#45;&gt;LOCATIONS -->
+<g id="edge2" class="edge" data-name="WAREHOUSES-&gt;LOCATIONS">
+
+<path fill="none" stroke="black" d="M472.5,-613.14C472.5,-594.57 472.5,-573.67 472.5,-553.9" style=""/>
+<polygon fill="black" stroke="black" points="476,-553.94 472.5,-543.94 469,-553.94 476,-553.94" style=""/>
+<text text-anchor="middle" x="499.13" y="-565.2" font-family="Times,serif" font-size="14.00" style="">has many</text>
+</g>
+<!-- ITEMS -->
+<g id="node4" class="node" pointer-events="visible" data-name="ITEMS">
+
+<polygon fill="none" stroke="black" points="265.5,-187.9 265.5,-355.1 517.49,-355.1 517.49,-187.9 265.5,-187.9" style=""/>
+<text text-anchor="middle" x="391.5" y="-338.5" font-family="Times,serif" font-size="14.00" style="">ITEMS</text>
+<polyline fill="none" stroke="black" points="265.5,-330.3 517.49,-330.3" style=""/>
+<text text-anchor="start" x="273.5" y="-313.7" font-family="Times,serif" font-size="14.00" style="">id (PK): INTEGER </text>
+<text text-anchor="start" x="273.5" y="-296.9" font-family="Times,serif" font-size="14.00" style=""> name: STRING (NOT NULL) </text>
+<text text-anchor="start" x="273.5" y="-280.1" font-family="Times,serif" font-size="14.00" style=""> description: TEXT </text>
+<text text-anchor="start" x="273.5" y="-263.3" font-family="Times,serif" font-size="14.00" style=""> category: STRING </text>
+<text text-anchor="start" x="273.5" y="-246.5" font-family="Times,serif" font-size="14.00" style=""> unit: STRING </text>
+<text text-anchor="start" x="273.5" y="-229.7" font-family="Times,serif" font-size="14.00" style=""> barcode: STRING (UNIQUE) </text>
+<text text-anchor="start" x="273.5" y="-212.9" font-family="Times,serif" font-size="14.00" style=""> created_at: DATE (DEFAULT NOW()) </text>
+<text text-anchor="start" x="273.5" y="-196.1" font-family="Times,serif" font-size="14.00" style=""> updated_at: DATE (DEFAULT NOW()) </text>
+</g>
+<!-- LOCATIONS&#45;&gt;ITEMS -->
+<g id="edge7" class="edge" data-name="LOCATIONS-&gt;ITEMS">
+
+<path fill="none" stroke="black" d="M332.08,-418.11C320.48,-414.48 308.86,-411.18 297.5,-408.4 264.22,-400.27 167.19,-415.99 144.43,-390.4 100.84,-341.39 176.05,-310.95 254.64,-293.31" style=""/>
+<polygon fill="black" stroke="black" points="255.23,-296.77 264.26,-291.23 253.75,-289.93 255.23,-296.77" style=""/>
+<text text-anchor="middle" x="244.03" y="-377.8" font-family="Times,serif" font-size="14.00" style="">many-to-many via INVENTORIES</text>
+</g>
+<!-- INVENTORIES -->
+<g id="node5" class="node" pointer-events="visible" data-name="INVENTORIES">
+
+<polygon fill="none" stroke="black" points="406.3,-0.5 406.3,-134.1 672.69,-134.1 672.69,-0.5 406.3,-0.5" style=""/>
+<text text-anchor="middle" x="539.5" y="-117.5" font-family="Times,serif" font-size="14.00" style="">INVENTORIES</text>
+<polyline fill="none" stroke="black" points="406.3,-109.3 672.69,-109.3" style=""/>
+<text text-anchor="start" x="414.3" y="-92.7" font-family="Times,serif" font-size="14.00" style="">id (PK): INTEGER </text>
+<text text-anchor="start" x="414.3" y="-75.9" font-family="Times,serif" font-size="14.00" style=""> item_id (FK): INTEGER (NOT NULL) </text>
+<text text-anchor="start" x="414.3" y="-59.1" font-family="Times,serif" font-size="14.00" style=""> location_id (FK): INTEGER (NOT NULL) </text>
+<text text-anchor="start" x="414.3" y="-42.3" font-family="Times,serif" font-size="14.00" style=""> quantity: FLOAT (NOT NULL) </text>
+<text text-anchor="start" x="414.3" y="-25.5" font-family="Times,serif" font-size="14.00" style=""> last_updated: DATE (DEFAULT NOW()) </text>
+<text text-anchor="start" x="414.3" y="-8.7" font-family="Times,serif" font-size="14.00" style=""> UNIQUE (item_id, location_id) </text>
+</g>
+<!-- LOCATIONS&#45;&gt;INVENTORIES -->
+<g id="edge3" class="edge" data-name="LOCATIONS-&gt;INVENTORIES">
+
+<path fill="none" stroke="black" d="M554.82,-408.94C558.99,-403.06 562.63,-396.87 565.5,-390.4 600.22,-312.06 584.25,-212.53 565.72,-144.99" style=""/>
+<polygon fill="black" stroke="black" points="569.12,-144.14 563.02,-135.48 562.38,-146.05 569.12,-144.14" style=""/>
+<text text-anchor="middle" x="613.13" y="-267.3" font-family="Times,serif" font-size="14.00" style="">has many</text>
+</g>
+<!-- ITEMS&#45;&gt;LOCATIONS -->
+<g id="edge8" class="edge" data-name="ITEMS-&gt;LOCATIONS">
+
+<path fill="none" stroke="black" d="M360.25,-355.06C359.53,-367.23 361.11,-379.37 366.43,-390.4 367.96,-393.58 369.68,-396.68 371.56,-399.69" style=""/>
+<polygon fill="black" stroke="black" points="368.61,-401.58 377.19,-407.79 374.35,-397.58 368.61,-401.58" style=""/>
+<text text-anchor="middle" x="466.03" y="-377.8" font-family="Times,serif" font-size="14.00" style="">many-to-many via INVENTORIES</text>
+</g>
+<!-- ITEMS&#45;&gt;INVENTORIES -->
+<g id="edge6" class="edge" data-name="ITEMS-&gt;INVENTORIES">
+
+<path fill="none" stroke="black" d="M404.33,-188C408.48,-175.49 413.97,-163.23 421.23,-152.6 423.61,-149.12 426.18,-145.73 428.92,-142.44" style=""/>
+<polygon fill="black" stroke="black" points="431.43,-144.87 435.49,-135.08 426.21,-140.21 431.43,-144.87" style=""/>
+<text text-anchor="middle" x="448.13" y="-156.8" font-family="Times,serif" font-size="14.00" style="">has many</text>
+</g>
+<!-- INVENTORIES&#45;&gt;LOCATIONS -->
+<g id="edge5" class="edge" data-name="INVENTORIES-&gt;LOCATIONS">
+
+<path fill="none" stroke="black" d="M611.1,-133.81C624.34,-149.92 636.26,-168.12 643.5,-187.4 669.75,-257.39 678.1,-289.33 643.5,-355.6 634.38,-373.05 621.42,-388.47 606.65,-401.92" style=""/>
+<polygon fill="black" stroke="black" points="604.67,-399.01 599.41,-408.2 609.26,-404.29 604.67,-399.01" style=""/>
+<text text-anchor="middle" x="694.47" y="-267.3" font-family="Times,serif" font-size="14.00" style="">belongs to</text>
+</g>
+<!-- INVENTORIES&#45;&gt;ITEMS -->
+<g id="edge4" class="edge" data-name="INVENTORIES-&gt;ITEMS">
+
+<path fill="none" stroke="black" d="M502.01,-134.06C494.57,-146.05 486.55,-158.28 478.5,-169.4 476.18,-172.59 473.8,-175.81 471.35,-179.02" style=""/>
+<polygon fill="black" stroke="black" points="468.61,-176.85 465.25,-186.9 474.14,-181.13 468.61,-176.85" style=""/>
+<text text-anchor="middle" x="519.47" y="-156.8" font-family="Times,serif" font-size="14.00" style="">belongs to</text>
 </g>
 </g>
 </svg>

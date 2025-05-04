@@ -1,19 +1,19 @@
-# PWA-WMS-prototype
+# Simple Web-based Warehouse Management Application (work in progress)
 
 Prototype for simple Warehouse Management System
 
 ## Overview
 
-Web based application for simple warehouse inventory managment (currently with very limited functionalities). It is designed to help manage item locations and inventory in small business and househoulds that dont need complicated ERP like applications. Barcode reading is supported with devices camera. This uses primarly Barcode Reading from Web API, if browser does not support this, polyfill is used (barcode-detector (git-hub.com/Sec-ant/barcode-detector))
+Web based application for simple warehouse inventory managment (currently with very limited functionalities). It is designed to help manage item locations and inventory in small business and househoulds that dont need complicated ERP like applications.
+
+Barcode reading is supported with devices camera. This uses primarly -Barcode Reading- from Web API, if browser does not support this, polyfill is used (barcode-detector (git-hub.com/Sec-ant/barcode-detector))
 
 ### Core Functionalities
 
 - User can create, login and edit their account.
-- User can create/edit/delete Warehouses. Warehouses can hold multiple Locations.
-- User can create/edit/delete Locations.
-- User can create/edit/delete Items and Inventories.
-- User can list all their items and filter those by name. Item list shows items with their inventories and locations. Item can be found with barcode.
-- User can use devices camera to read barcodes, and barcodes can be added to item information.
+- User can create/edit/delete Warehouses, Locations, Items and Inventories.
+- User can list all their items and filter those by name. Item list shows items with their inventories and locations. Item can be found with barcode or by name.
+- User can use devices camera to read barcodes, and add them to item information.
 
 ### Main Technologies Used:
 
@@ -59,7 +59,7 @@ check /backend/routes/
 
 ### Mixed notes:
 
-- User model has field -disabled-(defaults to false when creating user). There is no API-endpoint to change it, so it can only be set directly from connecting to the database.
+- User model has field -disabled-(defaults to false when creating user). There is no API-endpoint to change it, so it can only be changed by connecting to the database.
 
 #### //TODO:
 
