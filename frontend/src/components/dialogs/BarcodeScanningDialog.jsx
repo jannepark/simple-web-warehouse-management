@@ -31,8 +31,13 @@ export default function BarcodeScanningDialog({ open, onClose, onScanResult }) {
           onScanResult(barcode);
           onClose();
         } catch (err) {
-          console.error("Error during barcode scanning:", err);
-          alert(err.message || "Error during barcode scanning.");
+          console.error("Error during barcode scanning:", err.message);
+          if (err && err.message === "The object can not be found here.") {
+            alert("No camera found. Please ensure your device has a camera and permissions are granted.")
+          }
+          else {
+            alert("Error during barcode scanning.");
+          }
           onClose();
         }
       })();

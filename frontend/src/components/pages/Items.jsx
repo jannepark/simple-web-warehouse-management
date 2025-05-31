@@ -60,12 +60,17 @@ export default function Items() {
     }
   }, [token, handleLogout]);
 
-  // useEffect(() => {
-  //   refreshItems();
-  // }, [refreshItems]);
   useEffect(() => {
     refreshItems().catch((err) => console.error('Error fetching items:', err));
   }, [refreshItems]);
+
+  useEffect(() => {
+    const handler = () => {
+      refreshItems();
+    };
+    window.addEventListener('item-created', handler);
+    return () => window.removeEventListener('item-created', handler);
+  }, []);
 
   const handleEditOpen = (item) => {
     setEditItem({

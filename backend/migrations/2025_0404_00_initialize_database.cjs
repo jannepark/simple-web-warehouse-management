@@ -118,7 +118,6 @@ module.exports = {
       barcode: {
         type: Sequelize.STRING,
         allowNull: true,
-        unique: true,
       },
       created_at: {
         allowNull: false,

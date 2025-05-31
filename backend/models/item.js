@@ -27,7 +27,6 @@ Item.init({
   barcode: {
     type: DataTypes.STRING,
     allowNull: true,
-    unique: true
   }
 }, {
   sequelize,

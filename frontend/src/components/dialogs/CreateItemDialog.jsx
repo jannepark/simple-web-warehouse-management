@@ -33,6 +33,7 @@ const CreateItemDialog = ({ open, onClose }) => {
       }
       response = await inventoryService.createItem(token, { name, description, category, unit, barcode }, handleLogout);
       console.log(response)
+      window.dispatchEvent(new Event('item-created'));
       setErrorMessage('');
       onClose();
     } catch (err) {

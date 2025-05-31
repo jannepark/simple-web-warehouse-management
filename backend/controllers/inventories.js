@@ -67,7 +67,7 @@ export const getInventoryByLocation = async (req, res, next) => {
 export const createInventory = async (req, res, next) => {
   const transaction = await sequelize.transaction();
   try {
-    const { itemId, name, description, category, unit, locationId, quantity, barcode } = req.body;
+    let { itemId, name, description, category, unit, locationId, quantity, barcode } = req.body;
 
     if (!locationId) {
       throw new BadRequestError('Location is required');
@@ -82,6 +82,9 @@ export const createInventory = async (req, res, next) => {
     } else {
       if (!name) {
         throw new BadRequestError('Item name is required');
+      }
+      if (barcode === "") {
+        barcode = null; // Ensure barcode is null if empty
       }
       item = await Item.create({ name, description, category, unit, barcode }, { transaction });
     }
@@ -162,12 +165,14 @@ export const updateInventory = async (req, res, next) => {
 export const createItem = async (req, res, next) => {
   const transaction = await sequelize.transaction();
   try {
-    const { name, description, category, unit, barcode } = req.body;
+    let { name, description, category, unit, barcode } = req.body;
 
     if (!name) {
       throw new BadRequestError('Item name is required');
     }
-
+    if (barcode === "") {
+      barcode = null; // Ensure barcode is null if empty
+    }
     const item = await Item.create({ name, description, category, unit, barcode }, { transaction });
 
     await transaction.commit();
