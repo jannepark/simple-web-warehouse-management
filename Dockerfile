@@ -20,7 +20,15 @@ COPY ./backend/ .
 COPY --from=frontend /app/frontend/dist/ ./public
 
 # --------------------------------
-# STEP 3: Run backend
+# STEP 3: Run backend (with psql installed)
 # --------------------------------
+FROM node:22.15.0
+
+# Install Postgres client
+RUN apt-get update && apt-get install -y postgresql-client
+
+WORKDIR /app/backend
+COPY --from=backend /app/backend ./
+
 EXPOSE 3001
 CMD ["npm", "run", "start"]

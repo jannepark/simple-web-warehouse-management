@@ -1,6 +1,9 @@
 .env
 *.Identifier
 public
+snapshot.b64
+snapshot.sql
+reset-db.yml
 
 # Logs
 logs

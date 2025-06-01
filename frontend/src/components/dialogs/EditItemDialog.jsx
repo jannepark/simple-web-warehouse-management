@@ -1,15 +1,30 @@
-import { Dialog, DialogTitle, DialogContent, DialogActions, TextField, Button } from '@mui/material';
+import { Dialog, DialogTitle, DialogContent, DialogActions, TextField, Button, DialogContentText } from '@mui/material';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import BarcodeScanningDialog from './BarcodeScanningDialog';
 
-const EditItemDialog = ({ open, onClose, editItem, setEditItem, errorMessage, onSave }) => {
+const EditItemDialog = ({ open, onClose, editItem, setEditItem, errorMessage, onDelete, onSave, }) => {
   const [barcodeDialogOpen, setBarcodeDialogOpen] = useState(false);
+  const [deleteConfirmationOpen, setDeleteConfirmationOpen] = useState(false);
 
   const handleScanResult = (scannedBarcode) => {
     setEditItem({ ...editItem, barcode: scannedBarcode });
     setBarcodeDialogOpen(false);
   };
+
+  const handleDeleteClick = () => {
+    setDeleteConfirmationOpen(true);
+  };
+
+  const handleDeleteConfirm = async () => {
+    setDeleteConfirmationOpen(false);
+    await onDelete();
+  };
+
+  const handleDeleteCancel = () => {
+    setDeleteConfirmationOpen(false);
+  };
+
   return (
     <>
       <Dialog open={open} onClose={onClose}>
@@ -50,7 +65,7 @@ const EditItemDialog = ({ open, onClose, editItem, setEditItem, errorMessage, on
             margin="dense"
             label="Barcode"
             fullWidth
-            value={editItem.barcode || 'none'}
+            value={editItem.barcode || ''}
             onChange={(e) => setEditItem({ ...editItem, barcode: e.target.value })}
           />
           <Button onClick={() => setBarcodeDialogOpen(true)} color="primary" variant="outlined" sx={{ mt: 1 }}>
@@ -58,11 +73,32 @@ const EditItemDialog = ({ open, onClose, editItem, setEditItem, errorMessage, on
           </Button>
         </DialogContent>
         <DialogActions>
+          {/* delete on the left side */}
+          <Button onClick={handleDeleteClick} color="error" variant="outlined" sx={{ mr: 'auto' }}>
+            Delete
+          </Button>
           <Button onClick={onClose} color="primary">
             Cancel
           </Button>
           <Button onClick={onSave} color="primary">
             Save
+          </Button>
+        </DialogActions>
+      </Dialog>
+
+      <Dialog open={deleteConfirmationOpen} onClose={handleDeleteCancel}>
+        <DialogTitle>Confirm Delete</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            Are you sure you want to delete this item? This action cannot be undone.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleDeleteCancel} color="primary">
+            Cancel
+          </Button>
+          <Button onClick={handleDeleteConfirm} color="error" variant="contained">
+            Delete
           </Button>
         </DialogActions>
       </Dialog>
@@ -82,6 +118,7 @@ EditItemDialog.propTypes = {
   editItem: PropTypes.object.isRequired,
   setEditItem: PropTypes.func.isRequired,
   errorMessage: PropTypes.string,
+  onDelete: PropTypes.func.isRequired,
   onSave: PropTypes.func.isRequired,
 };
 

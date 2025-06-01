@@ -93,4 +93,15 @@ const createItem = async (token, item, handleLogout) => {
   }
 }
 
-export default { getAll, getInventoryByLocation, createInventory, updateInventory, deleteInventory, updateItem, createItem }
+const deleteItem = async (token, itemId, handleLogout) => {
+  const config = {
+    headers: { Authorization: `Bearer ${token}` },
+  }
+  try {
+    await axios.delete(`${baseUrl}/item/${itemId}`, config)
+  } catch (error) {
+    handleApiError(error, handleLogout)
+  }
+}
+
+export default { getAll, getInventoryByLocation, createInventory, updateInventory, deleteInventory, updateItem, createItem, deleteItem }

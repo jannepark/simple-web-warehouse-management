@@ -4,6 +4,8 @@ Web based application for simple warehouse inventory managment (currently with v
 
 Barcode reading is supported with devices camera. This uses primarly -Barcode Reading- from Web API, if browser does not support this, polyfill is used (barcode-detector (git-hub.com/Sec-ant/barcode-detector))
 
+The application is intended for internal use within a single organization or group, as all created users operate on a shared database instance.
+
 ### Core Functionalities
 
 - User can create, login and edit their account.
@@ -16,6 +18,10 @@ Barcode reading is supported with devices camera. This uses primarly -Barcode Re
     Backend: Node.js with Express. Sequalize to use Postgres database.
     Frontend: React.js
     Database: PostgreSQL
+
+### Screenshots
+
+![alt](/screenshots/warehouse-list-small.jpg) ![alt](/screenshots/inventory-list-small.jpg) ![alt](/screenshots/item-list-small.jpg) ![alt](/screenshots/edit-item-small.jpg) ![alt](/screenshots/barcode-scanning-small.jpg)
 
 ### Installation steps for deveploment:
 
@@ -62,7 +68,7 @@ check /backend/routes/
 - User can change location of inventory (move Inventory)
 - More unified way to handle errors in frontend (from requests to backend api), and a way to show that error to user.
 
-##### Bigger goals for project, but will likely not be implemented in near future
+##### Possible bigger goals for this project in future
 
 - Order management and processing (full order-handling workflow)
 - Goods receiving and shipping operations

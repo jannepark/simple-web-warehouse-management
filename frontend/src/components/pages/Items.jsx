@@ -41,6 +41,7 @@ export default function Items() {
   const [editItem, setEditItem] = useState({ name: '', description: '', category: '', unit: '', barcode: '' });
   const [editDialogOpen, setEditDialogOpen] = useState(false);
 
+
   const refreshItems = useCallback(async () => {
     setLoading(true);
     try {
@@ -92,6 +93,19 @@ export default function Items() {
     setSearchQuery(scannedBarcode);
     setBarcodeDialogOpen(false);
   };
+
+  const handleDelete = async (itemId, refresh) => {
+    try {
+      await inventoryService.deleteItem(token, itemId, handleLogout);
+      handleEditClose();
+      await refresh();
+      setError('');
+    } catch (err) {
+      setError('Error deleting item');
+      console.error(err);
+    }
+  };
+
 
   const filteredItems = items.filter(item =>
     item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -242,6 +256,7 @@ export default function Items() {
         editItem={editItem}
         setEditItem={setEditItem}
         errorMessage={error}
+        onDelete={async () => { await handleDelete(editItem.id, refreshItems); }}
         onSave={async () => {
           await handleEditSave(editItem, refreshItems, handleEditClose);
         }}

@@ -6,7 +6,8 @@ import {
   deleteInventory,
   updateInventory,
   getInventoryByLocation,
-  createItem
+  createItem, 
+  deleteItem
 } from '../controllers/inventories.js';
 import tokenExtractor from '../middlewares/tokenExtractor.js';
 
@@ -18,7 +19,7 @@ router.delete('/:id', tokenExtractor, deleteInventory);
 router.put('/:id', tokenExtractor, updateInventory); 
 router.put('/item/:id', tokenExtractor, updateItem);
 router.post('/item', tokenExtractor, createItem) 
-router.delete('item/:id', tokenExtractor, deleteInventory);
+router.delete('/item/:id', tokenExtractor, deleteItem);
 
 export default router;
 
